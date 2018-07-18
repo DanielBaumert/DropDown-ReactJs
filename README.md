@@ -4,14 +4,20 @@
 ```
 Website
 └───css
+│   │   eactjs-drpdwm-style.min.css
 │   │   eactjs-drpdwm-style.min.css.map
-|
 └───scss
 │   │   reactjs-drpdwm-style.scss
-|
 └───js
+|   └───jquery
+│   │   |   jquery-3.3.1.min.js
+|   └───jsx
+│   │   |   babel.min.js
+|   └───reactjs  
+│   │   |   react-dom.development.js
+│   │   |   react.development.js
 │   │   reactjs-drpdwn.jsx
-|
+│   │   main.jsx
 │   index.html   
 ```
 
