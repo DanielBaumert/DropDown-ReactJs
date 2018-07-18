@@ -70,18 +70,6 @@ class DropDown extends React.Component {
         }));
     }
 
-    IconLoader(props) {
-        return (
-            <svg
-                height={+props.height ? props.height : "30px"}
-                width={+props.width ? props.width : "30px"}
-                viewBox={`-15 -15 ${+props.width ? props.width : "30"} ${+props.width ? props.width : "30"}`}
-                xmlns="http://www.w3.org/2000/svg"
-                xmlnsXlink="http://www.w3.org/1999/xlink">
-                {props.iconPath}
-            </svg>);
-    }
-
     render() {
         let cls = !this.props.className ? this.props.className : "ed-drpdwn";
 
@@ -95,7 +83,14 @@ class DropDown extends React.Component {
                 <div onWheel={this.onWheelEvent} className={`${cls}-head`}>
                     <input className={`${cls}-title`} onChange={this.onChangeEvent} value={this.state.title} readOnly={!!this.props.readOnly} ></input>
                     <div className={`${cls}-aniWrp`} onClick={this.onClickEvent}>
-                        <IconLoader iconPath={this.state.toggeled ? IconArrowDown : IconArrowUp}></IconLoader>
+                        <svg
+                            height={+this.props.height ? this.props.height : "30px"}
+                            width={+this.props.width ? this.props.width : "30px"}
+                            viewBox={`-15 -15 ${+this.props.width ? this.props.width : "30"} ${+this.props.width ? this.props.width : "30"}`}
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlnsXlink="http://www.w3.org/1999/xlink">
+                            {this.state.toggeled ? IconArrowDown : IconArrowUp}
+                        </svg>
                     </div>
                 </div>
                 <div className={`${cls}-body ${this.getToogledClass()}`}>
