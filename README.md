@@ -1,5 +1,4 @@
 # DropDown-ReactJs
-## Demo
 http://facebamm.com/demo/eactjs-drpdwm/
 # How to use
 ```
