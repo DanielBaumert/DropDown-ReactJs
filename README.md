@@ -1,5 +1,5 @@
 # DropDown-ReactJs
-http://facebamm.com/demo/eactjs-drpdwm/
+http://facebamm.com/demo/reactjs-drpdwm/
 # How to use
 ```
 Website
