@@ -1,0 +1,122 @@
+//Clr = Color
+$className: ".ed-drpdwn";
+$displayClr: silver;
+$displayBgClr: #505050; //kind of gray
+$drpdwnBgClrBtn: #ff4646; //kind of red
+$drpdwnClrItem: silver;
+$drpdwnBgClrItem: #555555; //kind of gray
+$drpdwnBgClrItemHover: #353535; //kind of gray
+$drpdwnSplitClr: #303030; //kind of gray
+$drpdwnArrowUpClr: white; //kind of gray
+$drpdwnArrowDownClr: white; //kind of gray
+$drpdwnArrowUpAnimation: swipToDown;
+$drpdwnArrowDownAnimation: swipToUp;
+$drpdwnArrowAnimationDuration: 500ms;
+#{$className} {
+    user-select: none;
+    outline-width: 0;
+    background-color: $displayBgClr;
+    width: max-content;
+    height: 30px;
+    color: $displayClr;
+    margin: 1px;
+    min-width: 180px;
+    &-head {
+        height: 30px;
+        &>*:first-child {
+            margin-left: 4px;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            border: 0;
+            color: $displayClr; //important for input
+            background-color: transparent;
+            width: calc(100% - 40px);
+            height: 21px;
+        }
+        &>.ed-drpdwn-aniWrp {
+            float: right;
+            background-color: $drpdwnBgClrBtn;
+            &>svg {
+                float: right;
+                height: 100%;
+                &>.icon-arrow-up,
+                &>.icon-arrow-down {
+                    width: 30px;
+                    height: 30px;
+                }
+                &>.icon-arrow-up {
+                    animation-name: $drpdwnArrowUpAnimation;
+                    animation-duration: $drpdwnArrowAnimationDuration;
+                    fill: $drpdwnArrowUpClr;
+                }
+                &>.icon-arrow-down {
+                    animation-name: $drpdwnArrowDownAnimation;
+                    animation-duration: $drpdwnArrowAnimationDuration;
+                    fill: $drpdwnArrowDownClr;
+                }
+            }
+        }
+    }
+    &-body {
+        position: relative;
+        background-color: $drpdwnSplitClr;
+        min-width: 170px;
+        &>.ed-drpdwn-itm {
+            background-color: $drpdwnBgClrItem;
+            margin-bottom: 1px;
+            padding: 4px;
+            height: 21px;
+            &:hover {
+                background-color: $drpdwnBgClrItemHover;
+            }
+        }
+    }
+    &-itm {
+        cursor: pointer;
+    }
+}
+
+/* Base Settings */
+
+.ed {
+    input:hover,
+    input:focus,
+    &-type-input {
+        display: inline-block;
+        text-align: start;
+        cursor: text;
+        user-select: text !important;
+        &:hover,
+        &:focus {
+            border-bottom: 1px solid gray !important;
+        }
+    }
+    &-inline {
+        display: inline-flex;
+    }
+    &-hide {
+        display: none;
+    }
+}
+
+@keyframes swipToUp {
+    0% {
+        background-color: transparent;
+        transform: rotate(-180deg);
+    }
+    100% {
+        background-color: transparent;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes swipToDown {
+    0% {
+        background-color: transparent;
+        transform: rotate(180deg);
+    }
+    100% {
+        background-color: transparent;
+        transform: rotate(360deg);
+    }
+}
