@@ -11,7 +11,7 @@ $drpdwnArrowUpClr: white; //kind of gray
 $drpdwnArrowDownClr: white; //kind of gray
 $drpdwnArrowUpAnimation: swipToDown;
 $drpdwnArrowDownAnimation: swipToUp;
-$drpdwnArrowAnimationDuration: 500;
+$drpdwnArrowAnimationDuration: 500ms;
 #{$className} {
     user-select: none;
     outline-width: 0;
@@ -32,26 +32,31 @@ $drpdwnArrowAnimationDuration: 500;
             background-color: transparent;
             width: calc(100% - 40px);
             height: 21px;
+            
+            &:hover { 
+                border-bottom: 1px solid silver;
+            }
         }
-        &>.ed-drpdwm-aniWrp {
+        &>.ed-drpdwn-aniWrp {
             float: right;
             background-color: $drpdwnBgClrBtn;
-            height: 100%;
             &>svg {
                 float: right;
                 height: 100%;
-                &>.icon-arrow {
+                &>.icon-arrow-up,
+                &>.icon-arrow-down {
                     width: 30px;
                     height: 30px;
+                }
+                &>.icon-arrow-up {
+                    animation-name: $drpdwnArrowUpAnimation;
                     animation-duration: $drpdwnArrowAnimationDuration;
-                    &-up {
-                        animation-name: $drpdwnArrowUpAnimation;
-                        fill: $drpdwnArrowUpClr;
-                    } 
-                    &-down {
-                        animation-name: $drpdwnArrowDownAnimation;
-                        fill: $drpdwnArrowUpClr;
-                    }
+                    fill: $drpdwnArrowUpClr;
+                }
+                &>.icon-arrow-down {
+                    animation-name: $drpdwnArrowDownAnimation;
+                    animation-duration: $drpdwnArrowAnimationDuration;
+                    fill: $drpdwnArrowDownClr;
                 }
             }
         }
@@ -60,7 +65,7 @@ $drpdwnArrowAnimationDuration: 500;
         position: relative;
         background-color: $drpdwnSplitClr;
         min-width: 170px;
-        &>.ed-drpdwm-itm {
+        &>.ed-drpdwn-itm {
             background-color: $drpdwnBgClrItem;
             margin-bottom: 1px;
             padding: 4px;
@@ -69,6 +74,32 @@ $drpdwnArrowAnimationDuration: 500;
                 background-color: $drpdwnBgClrItemHover;
             }
         }
+    }
+    &-itm {
+        cursor: pointer;
+    }
+}
+
+/* Base Settings */
+
+.ed {
+    input:hover,
+    input:focus,
+    &-type-input {
+        display: inline-block;
+        text-align: start;
+        cursor: text;
+        user-select: text !important;
+        &:hover,
+        &:focus {
+            border-bottom: 1px solid gray !important;
+        }
+    }
+    &-inline {
+        display: inline-flex;
+    }
+    &-hide {
+        display: none;
     }
 }
 
