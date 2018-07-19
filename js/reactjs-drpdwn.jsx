@@ -71,7 +71,7 @@ class DropDown extends React.Component {
     }
 
     render() {
-        let cls = !this.props.className ? this.props.className : "ed-drpdwn";
+        let cls = !!this.props.className ? this.props.className : "ed-drpdwn";
 
         const DropDownItem = function (props) {
             return (
